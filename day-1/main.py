@@ -1,6 +1,8 @@
 import os
+from pathlib import Path
 
-deph_file = open('numbers.txt')
+p = Path(__file__).with_name('numbers.txt')
+deph_file = open(p)
 deph_flat_list = deph_file.readlines()
 
 depth_array = []
