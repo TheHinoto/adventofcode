@@ -1,23 +1,27 @@
+import os
+from pathlib import Path
 
-class Submariner: 
-    def __init__(self):
-        self.h_pos = 0
-        self.v_pos = 0
-
-    def move_forward(self,value):
-        self.h_pos += value
-        
-    def move_backward(self,value):
-        self.h_pos -= value
-        
-    def move_upward(self,value):
-        self.v_pos += value
-        
-    def move_downward(self,value):
-        self.v_pos -= value
-        
-    def get_position(self):
-        return [self.h_pos, self.v_pos]
+import Submariner1, Submariner2
     
-submariner = Submariner()
-print(submariner.get_position())
+submariner1 = Submariner1.Submariner()
+submariner2 = Submariner1.Submariner()
+
+moove_file = open(Path(__file__).with_name('mooves.txt'))
+moove_list = moove_file.readlines()
+
+for instruction in moove_list:
+    move = instruction.rstrip('\n')
+    [direction, distance] = move.split(" ")
+    distance = int(distance)
+    
+    if (direction == "up"):
+        submariner1.move_upward(distance)
+    
+    elif (direction == "down"):
+        submariner1.move_downward(distance)
+        
+    elif (direction == "forward"):
+        submariner1.move_forward(distance)
+    
+print(submariner1.get_position())
+print(submariner1.get_h_pos()*submariner1.get_v_pos())
