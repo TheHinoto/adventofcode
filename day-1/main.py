@@ -1,4 +1,3 @@
-import os
 from pathlib import Path
 
 p = Path(__file__).with_name('numbers.txt')
