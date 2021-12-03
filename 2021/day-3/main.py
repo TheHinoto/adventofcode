@@ -1,13 +1,12 @@
 from os import system
 from pathlib import Path
-from time import sleep
 
-def convert_binnary_array_to_integer(binnary_array: list):
+def convert_binnary_array_to_integer(binnary_array: list) -> int:
     binnary_array.reverse()
-    binnary_value=0
+    decimal_value=0
     for i in range(len(binnary_array)):
-        binnary_value += binnary_array[i]*(2**(i))
-    return binnary_value
+        decimal_value += binnary_array[i]*(2**(i))
+    return decimal_value
     
 with open(Path(__file__).with_name('input.txt'),"r") as f:
     inputs = f.readlines()
@@ -48,9 +47,6 @@ for i in range (bit_analysed_pos_maxvalue):
         epsilon_rate.append(1)
         
     count_bit_one = count_bit_zero = 0
-    print(gamma_rate)
-    print(epsilon_rate)
-    print("\n")
 
 gamma_rate_decimal = convert_binnary_array_to_integer(gamma_rate)
 epsilon_rate_decimal = convert_binnary_array_to_integer(epsilon_rate)
