@@ -54,5 +54,3 @@ epsilon_rate_decimal = convert_binnary_array_to_integer(epsilon_rate)
 print(f"Gamma Rate : {gamma_rate_decimal}")
 print(f"Epsilon Rate : {epsilon_rate_decimal}")
 print(f"Power Consumtion : {gamma_rate_decimal*epsilon_rate_decimal}")
-
-### test ###
